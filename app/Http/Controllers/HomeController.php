@@ -17,14 +17,14 @@ class HomeController extends Controller
     return view('about');
     }
 
-    public function blog(Post $post)
+    public function blog()
     {
 
-    $posts = $post->all();
+    $posts = Post::all();
+    
+    // dd($posts);
 
-    dd($posts);
-
-    return view('blog');
+    return view('blog', compact('posts'));
     }
 
 }
